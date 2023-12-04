@@ -10,7 +10,6 @@ enum layers
 
 enum custom_keycodes
 {
-#define ___I___ // separator
 	_LA_START = SAFE_RANGE,
 	_LA_END = SAFE_RANGE + 15,
 #define LA(layer) (_LA_START + (layer))
@@ -23,27 +22,25 @@ enum custom_keycodes
 
 	RANDOM,
 	GESC,
-#define LSSBO MT(MOD_LSFT, KC_LBRC) // left shift / square bracket open
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 	[_BASE] = LAYOUT( \
-		KC_BSLS, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    ___I___ KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_EQL,  \
-		KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    ___I___ KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_MINS, \
-		GESC,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    ___I___ KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, \
-		LSSBO,   KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    ___I___ KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RBRC, \
-		KC_LCTL, KC_GRV,  KC_LGUI, KC_LALT, KC_SPC, LT(_HI, KC_ENT), \
-		KC_RSFT, KC_BSPC, KC_RGUI, REPDOWN, REPUP, KC_RCTL \
-	                ),
+		KC_BSLS, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,            /**/ KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_EQL,   \
+		KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,            /**/ KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_MINS,  \
+		GESC,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,            /**/ KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,  \
+		KC_LBRC, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,            /**/ KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RBRC,  \
+		KC_LCTL, KC_GRV,  KC_LGUI, KC_LALT, KC_SPC,  LT(_HI, KC_ENT), /**/ KC_RSFT, KC_BSPC, KC_RGUI, REPDOWN, REPUP,   KC_RCTL   \
+	),
 
 	[_HI] = LAYOUT( \
-		KC_F12,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   ___I___ KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  \
-		XXXXXXX, XXXXXXX, KC_MUTE, KC_VOLU, KC_VOLD, LCA(KC_C),       KC_HOME, KC_PGDN, KC_PGUP, KC_END,  XXXXXXX, XXXXXXX, \
-		KC_GRV,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, S(KC_INS),       KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX, KC_PSCR, \
-		XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, LCA(KC_V),       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
-		_______, _______, _______, _______, _______, _______, ___I___ _______, KC_DEL,  _______, REPSLOW, REPFAST, _______ \
-	              ),
+		KC_F12,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,           /**/ KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  \
+		XXXXXXX, XXXXXXX, KC_MUTE, KC_VOLU, KC_VOLD, LCA(KC_C),       /**/ KC_HOME, KC_PGDN, KC_PGUP, KC_END,  XXXXXXX, XXXXXXX, \
+		KC_GRV,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, S(KC_INS),       /**/ KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX, KC_PSCR, \
+		XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, LCA(KC_V),       /**/ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
+		_______, _______, _______, _______, _______, _______,         /**/ _______, KC_DEL,  _______, REPSLOW, REPFAST, _______  \
+	),
 
 };
 
