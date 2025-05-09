@@ -38,6 +38,7 @@
         };
 
         packages.flash = pkgs.writeScript "qmk-flash" ''
+          #!/bin/sh
           cd ${qmk_firmware}
           ${pkgs.qmk}/bin/qmk flash ${packages.firmware}
         '';
